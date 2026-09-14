@@ -264,9 +264,9 @@ $form.Controls.Add($btnProceed)
             if (-not $upn) { continue }
 			    $currentIndex++
 
-            # Fetch the serial number using read_serial_t2.exe
+            # Fetch the serial number using read_serial_t2.ps1
             try {
-                $serialOutput = (& ".\read_serial_t2.exe").Trim()
+                $serialOutput = (& ".\read_serial_t2.ps1").Trim()
                 if ([string]::IsNullOrWhiteSpace($serialOutput) -or $serialOutput -eq "None") {
                     [System.Windows.Forms.MessageBox]::Show("No valid serial number detected . Skipping.", "Error")
                     Write-Host "No valid serial number for $upn. Skipping."
